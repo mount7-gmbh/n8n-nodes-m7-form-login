@@ -1,0 +1,52 @@
+{
+    "name": "n8n-nodes-m7-form-login",
+    "version": "0.1.0",
+    "description": "Generic form-login node: keeps username/password in an encrypted credential, performs the login internally and returns only the auth cookie. Never exposes secrets in workflow data or executions.",
+    "keywords": [
+        "n8n-community-node-package"
+    ],
+    "license": "MIT",
+    "homepage": "",
+    "author": {
+        "name": "Christoph Kleine",
+        "email": "christophkleine@mount7.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mount7-gmbh/n8n-nodes-m7-form-login.git"
+    },
+    "scripts": {
+        "build": "n8n-node build",
+        "build:watch": "tsc --watch",
+        "dev": "n8n-node dev",
+        "lint": "n8n-node lint",
+        "lint:fix": "n8n-node lint --fix",
+        "release": "n8n-node release",
+        "prepublishOnly": "n8n-node prerelease"
+    },
+    "files": [
+        "dist"
+    ],
+    "n8n": {
+        "n8nNodesApiVersion": 1,
+        "credentials": [
+            "dist/credentials/M7FormLoginApi.credentials.js"
+        ],
+        "nodes": [
+            "dist/nodes/M7FormLogin.node.js",
+            "dist/nodes/M7OrbeaKideLogin.node.js"
+        ]
+    },
+    "devDependencies": {
+        "@n8n/node-cli": "*",
+        "@types/node": "^24.9.2",
+        "eslint": "9.32.0",
+        "n8n-workflow": "^2.16.0",
+        "prettier": "3.6.2",
+        "release-it": "^19.0.4",
+        "typescript": "5.9.2"
+    },
+    "peerDependencies": {
+        "n8n-workflow": "*"
+    }
+}
